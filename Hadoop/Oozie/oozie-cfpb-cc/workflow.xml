@@ -1,0 +1,41 @@
+<workflow-app xmlns="uri:oozie:workflow:0.5" name="oozie-wf">
+
+    <start to="spark-node"/>
+    <action name="spark-node">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <!--<prepare>-->
+                <!--<delete path="${nameNode}/user/${wf:user()}/${examplesRoot}/output-data"/>-->
+            <!--</prepare>-->
+            <configuration>
+                <property>
+                    <name>mapred.compress.map.output</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+            <master>${master}</master>
+            <mode>cluster</mode>
+            <name>ConsumerComplaintsTSDriver</name>
+            <class>com.ibm.demos.finance.cfpb.cc.driver.ConsumerComplaintsTSDriver</class>
+            <jar>${nameNode}/user/${wf:user()}/${appRoot}/lib/ibm-demos-1.0-SNAPSHOT-jar-with-dependencies.jar</jar>
+            <spark-opts>--executor-memory 2g --conf spark.yarn.jar=hdfs://bi-hadoop-prod-4025.bi.services.us-south.bluemix.net:8020/user/arun123/oozie-cfpb-cc/lib/spark-assembly.jar --conf=spark.driver.extraJavaOptions=-Diop.version=4.2.0.0</spark-opts>
+<!--             –conf spark.driver.extraJavaOptions=-Diop.version=4.2.0.0 -->
+            <!--<arg>${nameNode}/user/${wf:user()}/${examplesRoot}/input-data</arg>-->
+            <!--<arg>${nameNode}/user/${wf:user()}/${examplesRoot}/output-data</arg>-->
+        </spark>
+        <ok to="end" />
+        <error to="fail" />
+    </action>
+    <kill name="fail">
+        <message>Workflow failed, error
+            message[${wf:errorMessage(wf:lastErrorNode())}]
+        </message>
+    </kill>
+    <end name="end" />
+
+</workflow-app>
+
+
+

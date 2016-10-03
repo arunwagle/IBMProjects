@@ -1,0 +1,24 @@
+git init
+
+git add .
+
+git commit -m "IBM Projects"
+
+git remote add origin https://github.com/arunwagle/IBMProjects.git
+
+git remote -v
+
+git push -u origin master
+
+If local out of sync
+git pull origin master
+
+
+Existing changes
+git add .
+git commit -m "Deleted jar file"
+git push -u origin master
+
+Remove files from GIT cache. Useful when adding files 
+git rm --cached -r .
+git reset fileName with path

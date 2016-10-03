@@ -1,0 +1,19 @@
+dn: dc=aw,dc=com
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: IBM
+dc: aw
+
+dn: cn=Manager,dc=aw,dc=com
+objectClass: organizationalRole
+cn: Manager
+description: Directory Manager
+
+dn: ou=People,dc=aw,dc=com
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Group,dc=aw,dc=com
+objectClass: organizationalUnit
+ou: Group

@@ -1,0 +1,37 @@
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 054b0278
+dn: olcDatabase={0}config
+objectClass: olcDatabaseConfig
+olcDatabase: {0}config
+olcAccess: {0}to * by dn.base="gidNumber=0+uidNumber=0,cn=peercred,cn=extern
+ al,cn=auth" manage by * none
+structuralObjectClass: olcDatabaseConfig
+entryUUID: 7c2668f4-1aa5-1036-82b6-89239f82cd94
+creatorsName: cn=config
+createTimestamp: 20160929153107Z
+entryCSN: 20160929153107.219343Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20160929153107Z
+
+
+
+
+
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 73ed256c
+dn: olcDatabase={2}hdb
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {2}hdb
+olcDbDirectory: /var/lib/ldap
+olcSuffix: dc=my-domain,dc=com
+olcRootDN: cn=Manager,dc=my-domain,dc=com
+olcDbIndex: objectClass eq,pres
+olcDbIndex: ou,cn,mail,surname,givenname eq,pres,sub
+structuralObjectClass: olcHdbConfig
+entryUUID: 7c26860e-1aa5-1036-82b8-89239f82cd94
+creatorsName: cn=config
+createTimestamp: 20160929153107Z
+entryCSN: 20160929153107.220088Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20160929153107Z

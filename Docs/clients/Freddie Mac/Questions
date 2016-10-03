@@ -1,0 +1,115 @@
+·         What data science tools are available?
+
+                IBM Data Science experience (DSX)
+                    - Create Notebooks in Scala, Python or R
+                    - Import notebooks directly from GIT
+                    - Integrate with Data Sources - Currently supports IBM SWIFT Object Storage.
+                    - Collaborate with other members in the team
+                    - Share notebooks on Social media
+                    - Connect to Cloud databases like DASHDB, Postgres and many others
+                    - Connect to external data services like Postgres on Compose, SoftLayer Object Storage, Service On Premises, Amazon S3 etc
+                    - Uses IBM Analytics for Apache Spark on IBM Bluemix behind the scenes for data processing.
+                    - Ability to create new Jupyter Notebooks for different use cases matching your needs
+                    - Integrated with RStudio
+                    - Search for existing Notebooks from a huge repository to get started quickly.
+                    - Ability to change kernel(Scala, Python or R kernel) on the fly. These are actual runtimes to run notebooks
+                    - Data Science Experience also leverages Spark and SystemML, which is the machine learning optimizer that IBM contributed to open source last year
+                    - Ecosystem initiative with a number of partners who are launching with us including H2O, RStudio, and Lightbend
+
+
+·         What software management tools are available?
+            - DSX can import Notebooks from GIT HUB
+
+·         What collaboration tools are available?
+            - Email Notebook link to colleagues
+            - Through GIT HUB
+            - Adding Collaborators to projects with 3 roles viz. viewer, editor or admin access [Can we integrate this with their internal LDAP users]
+
+·         How is parallel processing supported?
+            - Uses Apache Spark for parallel processing of data
+
+·         Are we able to install other tools as needed?
+            - Additional tools can be installed from maven repo (internal or external) as needed
+                You can install drivers as needed using the "pip install for python" or "AddJar command in scala"  [Need more clarifications if this is what is expected]
+                E.g: To work with Postgres data we need a Postgres JDBCdriver, in scala use %Addjar -f https://jdbc.postgresql.org/download/postgresql-9.4.1207.jre7.jar
+
+·         How similarities or differences are there between DSX and Watson Analytics?
+            - Need to research
+
+·         Are we able to run multiple versions of software tools, i.e., Spark?
+            - Spark as a service is run on Bluemix Cloud.
+                We can run different projects on different Spark Service instances but the Spark version is the one supported by Bluemix. Spark service can be attached at Notebook level
+                Currently we support Apache Spark 1.6.[Find out if we can support multiple Spark versions, also find out when is Spark 2.0 scheduled to be supported]
+
+·         What are the mechanisms for transferring data to/from DSX?
+            - [Need to find out]
+
+·         What are the options for data storage?  Flat files?  RDBMS?  NoSQL? Hadoop?
+               -  Support various databases including RDBMS, NOSQL, Hadoop with Hive(Any format like Parquet, ORC, CSV etc) , Flat files
+
+·         What, if any, responsibilities do we have in terms of system administration?
+            - Collaboration of Notebooks
+            - Creating connections to different data sources for a project.
+
+
+·         How are compute instances controlled, i.e, start/stop/monitored?
+            - You can start stop a kernel for running the notebooks
+
+
+·         Integration options with Freddie’s security infrastructure?
+            [Need to find out]
+
+·         Available mechanisms for data protection?
+            - On Premise data sources use "Secure Gateway"
+                Secure connectivity from Bluemix to other applications and data sources running on-premise or in other clouds.
+                A remote client is provided to enable secure connectivity.
+
+            - On Cloud data source uses IBM Bluemix secured platform
+
+======
+
+Freddie Mac
+Data Scientists
+fabio_quijada@freddiemac.com
+dylan_nielson@freddiemac.com
+
+Data Architect
+jim_thompson@freddiemac.com
+
+Enterprise Architect
+Sanjiv_Kumar@freddiemac.com
+
+Security Architect
+ross_upchurch@freddiemac.com
+
+Business
+lorie_jankowski@freddiemac.com
+
+
+
+
+
+Freddie Mac
+
+Data Scientists
+fabio_quijada@freddiemac.com
+dylan_nielson@freddiemac.com
+
+Data Architect
+jim_thompson@freddiemac.com
+
+Enterprise Architect
+Sanjiv_Kumar@freddiemac.com
+
+Security Architect
+ross_upchurch@freddiemac.com
+
+Business
+lorie_jankowski@freddiemac.com
+
+IBM Contacts
+Blair McDuff - Client Executive,
+Brian Haley - Analytics Client Architect
+Arun Wagle - Tech Evangelist Data Analytics
+Anjali Shah - Data Scientist
+

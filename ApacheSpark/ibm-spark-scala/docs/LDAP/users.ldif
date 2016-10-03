@@ -1,0 +1,345 @@
+
+# Create ams user
+dn: uid=ams,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: ams
+uid: ams
+uidNumber: 16859
+gidNumber: 100
+homeDirectory: /home/ams
+loginShell: /bin/bash
+gecos: ams
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+
+# Create postgres user
+dn: uid=postgres,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: postgres
+uid: postgres
+uidNumber: 16860
+gidNumber: 101
+homeDirectory: /home/postgres
+loginShell: /bin/bash
+gecos: postgres
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+
+# Create hive user
+dn: uid=hive,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: hive
+uid: hive
+uidNumber: 16861
+gidNumber: 102
+homeDirectory: /home/hive
+loginShell: /bin/bash
+gecos: hive
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create oozie user
+dn: uid=oozie,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: oozie
+uid: oozie
+uidNumber: 16862
+gidNumber: 103
+homeDirectory: /home/oozie
+loginShell: /bin/bash
+gecos: oozie
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create ambari-qa user
+dn: uid=ambari-qa,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: ambari-qa
+uid: ambari-qa
+uidNumber: 16863
+gidNumber: 104
+homeDirectory: /home/ambari-qa
+loginShell: /bin/bash
+gecos: ambari-qa
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create flume user
+dn: uid=flume,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: flume
+uid: flume
+uidNumber: 16864
+gidNumber: 105
+homeDirectory: /home/flume
+loginShell: /bin/bash
+gecos: flume
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create hdfs user
+dn: uid=hdfs,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: hdfs
+uid: hdfs
+uidNumber: 16865
+gidNumber: 106
+homeDirectory: /home/hdfs
+loginShell: /bin/bash
+gecos: hdfs
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create solr user
+dn: uid=solr,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: solr
+uid: solr
+uidNumber: 16866
+gidNumber: 107
+homeDirectory: /home/solr
+loginShell: /bin/bash
+gecos: solr
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create knox user
+dn: uid=knox,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: knox
+uid: knox
+uidNumber: 16867
+gidNumber: 108
+homeDirectory: /home/knox
+loginShell: /bin/bash
+gecos: knox
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create spark user
+dn: uid=spark,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: spark
+uid: spark
+uidNumber: 16868
+gidNumber: 109
+homeDirectory: /home/spark
+loginShell: /bin/bash
+gecos: spark
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create mapred user
+dn: uid=mapred,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: mapred
+uid: mapred
+uidNumber: 16869
+gidNumber: 110
+homeDirectory: /home/mapred
+loginShell: /bin/bash
+gecos: mapred
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create hbase user
+dn: uid=hbase,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: hbase
+uid: hbase
+uidNumber: 16870
+gidNumber: 111
+homeDirectory: /home/hbase
+loginShell: /bin/bash
+gecos: hbase
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create zookeeper user
+dn: uid=zookeeper,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: zookeeper
+uid: zookeeper
+uidNumber: 16871
+gidNumber: 112
+homeDirectory: /home/zookeeper
+loginShell: /bin/bash
+gecos: zookeeper
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create sqoop user
+dn: uid=sqoop,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: sqoop
+uid: sqoop
+uidNumber: 16872
+gidNumber: 113
+homeDirectory: /home/sqoop
+loginShell: /bin/bash
+gecos: sqoop
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create yarn user
+dn: uid=yarn,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: yarn
+uid: yarn
+uidNumber: 16873
+gidNumber: 114
+homeDirectory: /home/yarn
+loginShell: /bin/bash
+gecos: yarn
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+# Create hcat user
+dn: uid=hcat,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: hcat
+uid: hcat
+uidNumber: 16874
+gidNumber: 115
+homeDirectory: /home/hcat
+loginShell: /bin/bash
+gecos: hcat
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+dn: uid=rrdcached,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: rrdcached
+uid: rrdcached
+uidNumber: 16875
+gidNumber: 116
+homeDirectory: /home/rrdcached
+loginShell: /bin/bash
+gecos: hcat
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+dn: uid=mysql,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: mysql
+uid: mysql
+uidNumber: 16876
+gidNumber: 117
+homeDirectory: /home/mysql
+loginShell: /bin/bash
+gecos: mysql
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+dn: uid=kafka,ou=People,dc=aw,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: kafka
+uid: kafka
+uidNumber: 16877
+gidNumber: 118
+homeDirectory: /home/kafka
+loginShell: /bin/bash
+gecos: kafka
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+
+
+

@@ -1,0 +1,125 @@
+Dash DB
+
+PreRequisites
+Create a DashDB service on Bluemix, Load Data
+
+Create a Project in DSX
+
+Create a dash db connection - Associate the connection with the Bluemix Dash DB service
+
+Create Notebooks
+    Get Started - Load data into a notebook from different sources
+Access Mysql with R
+
+
+
+
+
+Postgres Install
+
+postgres/pound123
+Port: 5432
+
+df = sqlContext.load(source="jdbc",\
+                 url="jdbc:postgresql://localhost:5432/BLUDB",\
+                 dbtable="freddiemac_schema.stock_prices")
+
+
+
+
+ http://catalog.data.gov/dataset/housing-affordability-data-system-hads
+
+
+ easy_install pip
+
+ pip install python-openstackclient
+
+
+export OS_USER_ID=2f29a8b411ac43bc911ab13266e95e01
+export OS_PASSWORD=A*8P~[Q*5dE_wJk]
+export OS_PROJECT_ID=5afe602504324a09aa0c30a516fdea62
+export OS_AUTH_URL=https://identity.open.softlayer.com/v3
+export OS_REGION_NAME=dallas
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+
+
+export PATH=/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-09-05-a.xctoolchain/usr/bin:"${PATH}"
+
+
+
+Access Key ID:
+AKIAJR4P3V5EUX464JWQ
+Secret Access Key:
+v25C/tumv/i38xK8N8t6XG9u/IwTQrcJhHaBTCjz
+
+s3n://s3-us-west-1.amazonaws.com/awbucket1/data/hmda_lar.csv
+
+CREATE TABLE "MORTGAGE_DATA"
+(
+  "co_applicant_ethnicity" INT,
+  "co_applicant_ethnicity_name" VARCHAR(30),
+  "purchaser_type" INT,
+  "respondent_id" VARCHAR(20),
+  "preapproval" INT,
+  "co_applicant_race_1" INT,
+  "lien_status_name" VARCHAR(20),
+  "sequence_number" VARCHAR(20),
+  "applicant_income_000s" INT,
+  "preapproval_name" VARCHAR(50),
+  "applicant_race_name_1" VARCHAR(20),
+  "action_taken_name" VARCHAR(50),
+  "msamd" VARCHAR(20),
+  "denial_reason_name_1" VARCHAR(50),
+  "denial_reason_1" INT,
+  "applicant_ethnicity_name" VARCHAR(50),
+  "owner_occupancy_name" VARCHAR(50),
+  "loan_purpose_name" VARCHAR(50),
+  "action_taken" INT,
+  "hoepa_status_name" VARCHAR(50),
+  "agency_code" INT,
+  "fips_code" VARCHAR(50),
+  "loan_purpose" INT,
+  "co_applicant_race_name_1" VARCHAR(50),
+  "application_date_indicator" VARCHAR(50),
+  "property_type" INT,
+  "applicant_race_1" INT,
+  "lien_status" INT,
+  "loan_amount_000s" INT,
+  "owner_occupancy" INT,
+  "loan_type_name" VARCHAR(50),
+  "rate_spread" VARCHAR(50),
+  "applicant_sex_name" VARCHAR(50),
+  "applicant_sex" INT,
+  "co_applicant_sex_name" VARCHAR(50),
+  "purchaser_type_name" VARCHAR(100),
+  "hoepa_status" INT,
+  "census_tract_number" VARCHAR(100),
+  "agency_name" VARCHAR(100),
+  "as_of_year" INT,
+  "loan_type" INT,
+  "applicant_ethnicity" INT,
+  "agency_abbr" VARCHAR(10),
+  "property_type_name" VARCHAR(100),
+  "co_applicant_sex" INT
+
+
+);
+
+
+      "applicant_ethnicity":2,
+      "agency_abbr":"OCC",
+      "property_type_name":"One-to-four family dwelling (other than manufactured housing)",
+      "co_applicant_sex":5
+
+
+desc XAA
+Select count(*) from XAA
+
+SELECT STATE_NAME,STATE_ABBR,LOAN_TYPE_NAME,COUNTY_NAME,AS_OF_YEAR
+FROM DASH5845.MORTGAGE_REPORT_DATA;
+
+
+SELECT LOAN_TYPE_NAME, count(*) FROM DASH5845.MORTGAGE_REPORT_DATA group by LOAN_TYPE_NAME;
+
+df_grpBy_LoanType["LOAN_TYPE_NAME"] ,

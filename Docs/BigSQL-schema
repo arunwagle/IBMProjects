@@ -1,0 +1,20 @@
+-- This sql file works on single-node cluster only
+use gosalesdw;
+load hadoop using file url 'file:///usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.BURST_TABLE2.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.BURST_TABLE2 overwrite ;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.BURST_TABLE.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.BURST_TABLE overwrite ;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.DIST_INVENTORY_FACT.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.DIST_INVENTORY_FACT overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.DIST_PRODUCT_FORECAST_FACT.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.DIST_PRODUCT_FORECAST_FACT overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.DIST_RETURNED_ITEMS_FACT.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.DIST_RETURNED_ITEMS_FACT overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.DIST_RETURN_REASON_DIM.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.DIST_RETURN_REASON_DIM overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_EMPLOYEE_DIM.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_EMPLOYEE_DIM overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_EXPENSE_FACT.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_EXPENSE_FACT overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_EXPENSE_PLAN_FACT.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_EXPENSE_PLAN_FACT overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_EXPENSE_TYPE_DIM.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_EXPENSE_TYPE_DIM overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_EXPENSE_UNIT_LOOKUP.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_EXPENSE_UNIT_LOOKUP overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_POSITION_DIM.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_POSITION_DIM overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_POSITION_LOOKUP.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_POSITION_LOOKUP overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_POSITION_SUMMARY_FACT.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_POSITION_SUMMARY_FACT overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_RANKING_DIM.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_RANKING_DIM overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_RANKING_FACT.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_RANKING_FACT overwrite;
+load hadoop using file url '/usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/data/GOSALESDW.EMP_RECRUITMENT_DIM.txt'    with SOURCE PROPERTIES ('field.delimiter'='\t') into table GOSALESDW.EMP_RECRUITMENT_DIM overwrite;
+@

@@ -1,0 +1,40 @@
+
+1. Create SSL certificate first
+
+cd /etc/pki/tls/certs
+
+make server.key
+
+# remove passphrase from private key
+openssl rsa -in server.key -out server.key
+
+make server.csr
+
+openssl x509 -in server.csr -out server.crt -req -signkey server.key -days 3650
+
+
+2. Configure LDAP Server
+
+cp /etc/pki/tls/certs/server.key \
+/etc/pki/tls/certs/server.crt \
+/etc/pki/tls/certs/ca-bundle.crt \
+/etc/openldap/certs/
+
+chown ldap. /etc/openldap/certs/server.key \
+/etc/openldap/certs/server.crt \
+/etc/openldap/certs/ca-bundle.crt
+
+
+3. ldapmodify -Y EXTERNAL -H ldapi:/// -f mod_ssl.ldif
+
+4. Edit vi /etc/sysconfig/slapd
+
+5. 	Configure LDAP Client for TLS connection.
+
+    a. echo "TLS_REQCERT allow" >> /etc/openldap/ldap.conf
+    b. echo "tls_reqcert allow" >> /etc/nslcd.conf
+    c. authconfig --enableldaptls --update
+
+6. Test if TLS is working
+   ldapsearch -x -ZZ -h n1.aw.com -b dc=aw,dc=com
+

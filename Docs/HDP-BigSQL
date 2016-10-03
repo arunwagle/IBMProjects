@@ -1,0 +1,220 @@
+1. Create bare minimum CENTOS cluster on SoftLayer
+    Computing Instance: 8 x 2.0 GHz Cores
+    First Disk: 100 GB (LOCAL)
+    RAM: 16 GB
+    Operating System: CentOS 7.x - Minimal Install (64 bit)
+    Uplink Port Speeds: 100 Mbps Public & Private Network Uplinks
+
+
+2. Setup First Node
+    Login to the box using as root
+    Generate ssh public/private key - Run ssh-keygen
+    Perform ssh-copy-id to from first node to itself (silent ssh to itself)
+        ssh-copy-id HOSTNAME
+        For e.g ssh-copy-id n1.aw.com
+    Check if ssh folder is created (ls -al)
+    Test passwordless login ssh to HOSTNAME
+    Copy the public key content to clipboard
+    Go to SoftLayer > Manage > ssh keys > Add (Paste the copied clipboard key)
+
+3. Setup 4 nodes
+    Setup identical nodes in Soft Layer
+    Setup Passwordless SSH: Before placing order- add ssh keys to all nodes
+    Assign cluster names
+    Go to SoftLayer > Device > Device List (Should show 5 nodes)
+
+4. Modify /etc/hosts on Node 1 to add all the nodes
+    Test by ssh to nodes without password
+
+5. Created 2 scripts (Centos-script-do.sh and Centos-script-do-copy.sh)
+   chmod +x  Centos-script-do.sh
+   chmod +x  Centos-script-do-copy.sh
+
+6. HDP setup
+   Copy /etc/hosts to all other 4 nodes using Centos-script-do-copy.sh
+    ./Centos-script-do-copy.sh /etc/hosts
+
+   NTP - Synchronize clocks
+        ./Centos-script-do.sh    "yum install -y ntp"
+        ./Centos-script-do.sh   "systemctl start ntpd.service"
+        ./Centos-script-do.sh    "systemctl enable ntpd.service"
+        ./Centos-script-do.sh    "ntpstat" (if not synchronized - ./Centos-script-do.sh    "systemctl restart ntpd.service")
+
+    Disable SELinux at runtime
+        ./Centos-script-do.sh    "setenforce 0"
+
+    Disable permanently
+        Edit /etc/sysconfig/selinux (Change setting to disabled: SELINUX-permissive to SELINUX-disabled)
+        ./Centos-script-do-copy.sh  /etc/sysconfig/selinux
+
+    Turn off Firewall
+         ./Centos-script-do.sh   "systemctl stop firewalld"
+         ./Centos-script-do.sh    "systemctl mask firewalld"
+         ./Centos-script-do.sh    "systemctl start firewalld" // Will throw an error as we have masked it
+
+    Setup HDP, Ambari Repository files
+        cd /etc/yum.repos.d
+        [https://docs.hortonworks.com/HDPDocuments/Ambari-2.2.1.0/bk_Installing_HDP_AMB/content/_ambari_repositories.html]
+        Run
+            wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.2.1.0/ambari.repo
+
+            wget http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.4.0.0/hdp.repo
+
+    Install
+        yum install ambari-server
+        ambari-server setup
+        ambari-server start
+
+
+    Setup software
+        Login to Ambari ( Login IP:8080) admin/admin
+        Setup Cluster
+            Add all hosts to the cluster
+            Provide ssh private key (Copy from ~/.ssh/.private key file)
+            Assign slaves and clients
+                Big SQL needs "Client" to be installed on all nodes
+                2 managements nodes and 3 data nodes
+            Customize service section
+                Assign passwords
+
+
+    Setup BigSQL
+        Create Local Repo in you (yum install createrepo)
+
+        Install and start Apache server
+            yum install httpd
+            systemctl start httpd.service
+            systemctl enable httpd.service  (optional: make available on reboot)
+            mkdir /var/www/html/repos
+
+        Get BigInsights bin file (biginsights*.x86_64.bin)
+            chmod +x biginsights*.x86_64.bin
+            Offline install [https://ibm-open-platform.ibm.com/extras/milestones/HDP-BigSQL-4.2.0-TP/]
+            wget https://ibm-open-platform.ibm.com/extras/milestones/HDP-BigSQL-4.2.0-TP/biginsights_hdp_TRUNK.el7.x86_64.tar.gz
+            tar xzf biginsights_hdp_TRUNK.el7.x86_64.tar.gz
+
+        yum install BigInsights-HDP-1.2.0.0-2.4.el7.x86_64.rpm (Check file name)
+
+        Setup Local repository
+            mv BigInsights-Valuepacks /var/www/html/repos
+            createrepo /var/www/html/repos/BigInsights-Valuepacks/RHEL7/x86_64/TRUNK/
+            Modify /var/lib/ambari-server/resources/stacks/HDP/2.4/repos/repoinfo.xml
+                Change BigInsights repo to point to local BigInsights [:1,%s/birepo-build.svl.ibm.com/localhost.localdomain/g] [Specify path only upto TRUNK]
+                ~/Centos-script-do.sh    "yum clean all"
+
+        Big SQL Prerequisites
+            ~/Centos-script-do.sh "yum install -y ksh"
+
+            Modify /etc/sudoers [Comment out Defaults requiretty, use visudo tool to modify]
+            ~/Centos-script-do-copy.sh /etc/sudoers
+
+            Turn off integration between Hive and Atlas [For Beta version]
+                GoTo Ambari > Hive > Configs > Advanced
+                Modify hive.exec.post.hooks [Remove Atlas hooks]
+
+        Install Big SQL
+            ambari-server restart
+            Ambari > Add Service > Big SQL
+            Assign slaves and clients
+               Select "Big SQL Worker" on all nodes
+
+
+        Install BigInsights Home [This install jsqsh client]
+
+        Install Knox
+
+        Setup knox
+            cd /usr/ibmpacks/bin/3.0.2.213/
+            ./knox_setup.sh -u admin -p admin -y
+
+        Start Demo LDAP
+
+        Run BigInsights Web
+        https://localhost.localdomain:8443/gateway/default/BigInsightsWeb/index.html
+
+
+        Use JSQSH
+        /usr/ibmpacks/common-utils/jsqsh/4.10.0.4/bin/jsqsh
+        \connect bigsql
+        \show tables -e
+
+        Create Table
+        create hadoop table bigsql.table1(col1 int, col2 varchar(5))
+        Access Sample SQL files-
+        http://www.ibm.com/support/knowledgecenter/SSPT3X_4.2.0/com.ibm.swg.im.infosphere.biginsights.tut.doc/doc/tut_Less_bigsql_ReadManip1.html
+
+        a. \eval /usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/queries/GOSALESDW_drop.sql
+        b. \eval /usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/queries/GOSALESDW_ddl.sql
+        c. \eval /usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/queries/GOSALESDW_load.sql
+            Note: Edit /usr/ibmpacks/bigsql/4.2.0.0/bigsql/samples/queries/GOSALESDW_load.sql
+                :%s/file:///opt/ibm/biginsights/bigsql//usr/ibmpacks/bigsql/4.2.0.0/bigsql/g
+
+        Debugging Steps in case of errors
+
+        Reinstall ambari
+
+        ambari-server stop
+        ambari-server reset
+        ambari-agent stop
+        yum erase ambari-server
+
+        rm -rf /var/lib/ambari-server
+
+        rm -rf /var/run/ambari-server
+
+        rm -rf /usr/lib/amrbari-server
+
+        yum install ambari-server
+        ambari-server setup
+        ambari-server start -v -g
+
+        On Each worker
+
+        ambari-agent stop
+
+        yum erase ambari-agent
+
+        rm -rf /var/lib/ambari-agent
+
+        rm -rf /var/run/ambari-agent
+
+        rm -rf /usr/lib/amrbari-agent
+
+        rm -rf /etc/ambari-agent
+
+        rm -rf /var/log/ambari-agent
+
+        rm -rf /usr/lib/python2.6/site-packages/ambari*
+
+
+    Zookeeper Client install error
+    Circular link
+    ll /etc/zookeeper/conf
+    ll /usr/hdp/current/zookeeper-client/conf
+
+
+    ln -s /etc/zookeeper/2.4.0.0-169/0 /usr/hdp/current/zookeeper-client/conf
+
+
+
+
+
+
+
+
+
+
+
+python /usr/lib/python2.6/site-packages/ambari_agent/HostCleanup.py --silent --skip=users
+
+
+
+
+
+Important urls
+https://localhost.localdomain:8443/gateway/default/BigInsightsWeb/index.html#/welcome
+http://www.ibm.com/support/knowledgecenter/SSPT3X_4.1.0/com.ibm.swg.im.infosphere.biginsights.tut.doc/doc/tut_bsql_crtbles.html
+http://localhost:8080/#/main/services/HIVE/configs
+
+http://localhost.localdomain:11080/console/?user.name=guest#tasks=otswelcome&activeTask=otswelcome
+

@@ -1,0 +1,73 @@
+# Create apache Group
+dn: cn=apache,ou=Group,dc=aw,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: apache
+gidNumber: 678
+
+
+# Create hadoop Group
+dn: cn=hadoop,ou=Group,dc=aw,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: hadoop
+memberUid: ams
+memberUid: hive
+memberUid: oozie
+memberUid: ambari-qa
+memberUid: flume
+memberUid: hdfs
+memberUid: solr
+memberUid: knox
+memberUid: spark
+memberUid: mapred
+memberUid: hbase
+memberUid: zookeeper
+memberUid: sqoop
+memberUid: yarn
+memberUid: hcat
+memberUid: kafka
+gidNumber: 679
+
+
+# Create users Group
+dn: cn=users,ou=Group,dc=aw,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: users
+memberUid: oozie
+memberUid: ambari-qa
+gidNumber: 680
+
+
+# Create hdfs Group
+dn: cn=hdfs,ou=Group,dc=aw,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: hdfs
+memberUid: hdfs
+gidNumber: 681
+
+# Create postgres Group
+dn: cn=postgres,ou=Group,dc=aw,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: hdfs
+memberUid: postgres
+gidNumber: 682
+
+# Create rrdcached Group
+dn: cn=rrdcached,ou=Group,dc=aw,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: rrdcached
+memberUid: rrdcached
+gidNumber: 683
+
+# Create mysql Group
+dn: cn=mysql,ou=Group,dc=aw,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: mysql
+memberUid: mysql
+gidNumber: 682
