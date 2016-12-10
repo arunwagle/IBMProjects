@@ -2,6 +2,14 @@
 
 
 ## IBM Data Science Experience(DSX) ##
+</br>
+
+    1. Signup for IBM DSX and IBM Bluemix account
+    2. Show the following capabilities (Learn, Create and Collaborate)
+            a. Create Projects    
+            b. Create Dash DB connection, show connection to DashDB from notebook
+               What do I do if I don't know Python and SparkSQL ? Use Community search feature . E.g Spark for          Python         
+            c. Show Spark Console
             
 
 ## Data Ingestion ##
