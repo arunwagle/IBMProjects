@@ -8,7 +8,9 @@
     2. Show the following capabilities (Learn, Create and Collaborate)
             a. Create Projects    
             b. Create Dash DB connection, show connection to DashDB from notebook
-               What do I do if I don't know Python and SparkSQL ? Use Community search feature . E.g Spark for          Python         
+               What do I do if I don't know Python and SparkSQL ? 
+               Use Community search feature . E.g Search for "Spark for Python"
+            c. Bookmark helpful links
             c. Show Spark Console
             
 
