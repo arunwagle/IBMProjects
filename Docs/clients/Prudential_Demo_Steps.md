@@ -14,7 +14,8 @@
         d. Show collaboration (dsxibmdemo@gmail.com)
         f. Show sharing feature
         g. Show libraries that are loaded by default
-        e. Show DXS documentation
+        f. Show version capabilities
+        g. Show DXS documentation        
     3. Show Advanced Demos   
         a. BI Notebook
         b. ML Notebook
