@@ -40,7 +40,7 @@
     3.  Show Lift on Bluemix
 
 ## For Watson Analytics Demo ##
-<br></br>
+</br>
 
     1.  Show the basics
     
