@@ -23,6 +23,7 @@
             https://github.com/Brunel-Visualization/Brunel/wiki
             https://github.com/ibm-cds-labs/pixiedust          
         d. Graph Notebook
+        e. R-Studio
     4. Self Service ML (Beta)        
 
 ## Data Ingestion ##
