@@ -36,12 +36,8 @@
         d.  Show FAQ
     2.  Show BigInsights on Bluemix Cloud
         a. Show Ambari console
-        b. Show SSH        
-    3.  Show Lift on Bluemix
+        b. Show SSH
 
-## For Watson Analytics Demo ##
-</br>
 
-    1.  Show the basics
     
 
