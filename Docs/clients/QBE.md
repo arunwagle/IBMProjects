@@ -8,4 +8,5 @@
     6.  Pre-annotating with a dictionary-based annotator
     7.  Creating an annotation task and Annotating documents
     8.  Creating a machine-learning annotator.
+    9.  Publich the model to Alchemy (Modelid- ef1f1832-8e24-46c7-aea7-bdda9f97df70)
 
