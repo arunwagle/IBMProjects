@@ -9,3 +9,7 @@
 https://en.wikipedia.org/wiki/List_of_automobile_manufacturers
 
 ##### Step4- Import Documents Corpus
+
+##### Step4- Creating annotation sets
+  ####### An annotation set is a subset of documents from an imported document set that you assign to a human annotator. The human annotator annotates the documents in the annotation set.
+
