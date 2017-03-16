@@ -18,7 +18,7 @@
     8.  Creating a machine-learning annotator(Annonator Component).
         a. Create machine learning annotator
         b. Click "Next" and select Dictionary Mapping (Select "Reuse mapping that is defined for dictionary pre-annotator")
-        c Click "Train and Evaluate" 
+        c Click "Train and Evaluate". This step will take some time to complete 
     9.  Publich the model to Alchemy 
         a. Capture the Modelid- 78920c78-5a2a-40ed-9c55-b09d72cc52c3. This is required if you need to write your own apps.
 
