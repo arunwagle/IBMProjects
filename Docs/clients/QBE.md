@@ -7,6 +7,8 @@
     5.  Creating annotation sets(Documents Tab) - An annotation set is a subset of documents from an imported document set that you assign to a human annotator. The human  annotator annotates the documents in the annotation set.
     6.  Pre-annotating with a dictionary-based annotator(Annonator Component). Run the annotators by selecting the document set created in above step.
     7.  Creating an annotation task and Annotating documents
+        a. Select "Human Annotation" Tab and create one or more task. The number of tasks created equals the number of users working on the set.
+        b. Select the task and annotate. This is the most important action and usually done by people who understand the business model.        
     8.  Creating a machine-learning annotator.
     9.  Publich the model to Alchemy (Modelid- 78920c78-5a2a-40ed-9c55-b09d72cc52c3)
 
