@@ -9,6 +9,10 @@
     7.  Creating an annotation task and Annotating documents
         a. Select "Human Annotation" Tab and create one or more task. The number of tasks created equals the number of users working on the set.
         b. Select the task and annotate. This is the most important action and usually done by people who understand the business model.        
+            Annotate and specify relations
+        c. Submit all once all the documents are annotated. The status will show as "Submitted" in the Tasks tab. 
+        d. Select the set and "Accept" the changes. This completes the annotation process. 
+        e. Follow these steps for all the sets
     8.  Creating a machine-learning annotator.
     9.  Publich the model to Alchemy (Modelid- 78920c78-5a2a-40ed-9c55-b09d72cc52c3)
 
