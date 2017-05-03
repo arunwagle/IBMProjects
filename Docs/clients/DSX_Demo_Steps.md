@@ -22,8 +22,9 @@
         c. Visualization demo
             https://github.com/Brunel-Visualization/Brunel/wiki
             https://github.com/ibm-cds-labs/pixiedust          
-        d. Graph Notebook
+        d. Talk about Graph Usecase
         e. R-Studio
+        f. Talk about real time streaming usecase
     4. Self Service ML (Beta)        
 
 ## Data Ingestion ##
