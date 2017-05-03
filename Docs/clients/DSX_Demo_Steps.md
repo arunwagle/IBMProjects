@@ -21,7 +21,8 @@
         b. ML Notebook
         c. Visualization demo
             https://github.com/Brunel-Visualization/Brunel/wiki
-            https://github.com/ibm-cds-labs/pixiedust          
+            https://github.com/ibm-cds-labs/pixiedust 
+            https://matplotlib.org/
         d. Talk about Graph Usecase
         e. Using R-Studio
             https://datascience.ibm.com/blog/using-rstudio-in-ibm-data-science-experience/
