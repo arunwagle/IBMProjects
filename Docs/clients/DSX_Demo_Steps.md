@@ -23,8 +23,11 @@
             https://github.com/Brunel-Visualization/Brunel/wiki
             https://github.com/ibm-cds-labs/pixiedust          
         d. Talk about Graph Usecase
-        e. R-Studio
-        f. Talk about real time streaming usecase
+        e. Using R-Studio
+            https://datascience.ibm.com/blog/using-rstudio-in-ibm-data-science-experience/
+        f. Talk about real time streaming usecase - Kafka
+        g. SPSS integration
+            https://apsportal.ibm.com/docs/content/analyze-data/spss-visualization.html
     4. Overview of Self Service ML (Beta)        
 
 ## Data Ingestion ##
@@ -33,7 +36,7 @@
 
     1.  Show Data Connect on Bluemix
         a.  Show Connections
-        b.  Show Activities (Show existing HiveToDashDBActivity)
+        b.  Show Activities 
         c.  Design Data Flow
         d.  Show FAQ
     2.  Show BigInsights on Bluemix Cloud
