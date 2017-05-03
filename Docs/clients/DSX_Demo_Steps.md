@@ -25,7 +25,7 @@
         d. Talk about Graph Usecase
         e. R-Studio
         f. Talk about real time streaming usecase
-    4. Self Service ML (Beta)        
+    4. Overview of Self Service ML (Beta)        
 
 ## Data Ingestion ##
 
