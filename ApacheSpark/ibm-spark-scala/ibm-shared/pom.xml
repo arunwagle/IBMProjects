@@ -61,7 +61,7 @@
 
             <version16.spark.core>1.6.2</version16.spark.core>
 
-            <version.spark.core>2.0.0</version.spark.core>
+            <version.spark.core>2.2.2</version.spark.core>
             <version.spark.streaming>2.0.0</version.spark.streaming>
             <version.spark.kafka.streaming>2.0.0</version.spark.kafka.streaming>
             <version.kafka.spark>0.8.2.2</version.kafka.spark>
