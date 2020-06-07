@@ -4,7 +4,7 @@
 2. [Create a free IBM Cloud Account](#create-free-ibm-account)
 3. [Setup IBM Services](#setup-ibm-services)
 4. [Setup ServiceNow](#setup-servicenow)
-5. [Deploy Watson Assistant on ServiceNow](#deploy-wa-on-servicenow)
+5. [Deploy WA on ServiceNow](#deploy-wa-on-servicenow)
 
 
 ## Clone repository
@@ -44,14 +44,12 @@ Note: Refer to [Try it out](https://cloud.ibm.com/docs/assistant?topic=assistant
 ### IBM Cloud Functions
 [Create Speech To Text Service](https://cloud.ibm.com/docs/services/speech-to-text?topic=speech-to-text-gettingStarted#getting-started-tutorial)
 
-## SericeNow Setup
+## Setup ServiceNow
 [Create Text To Speech Service](https://cloud.ibm.com/docs/services/text-to-speech?topic=text-to-speech-gettingStarted#getting-started-tutorial)
 
 
-## Deploy Watson Assistant on ServiceNow
+## Deploy WA on ServiceNow
 
-
-   
    ```
    Replace 
    <script src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"></script>
