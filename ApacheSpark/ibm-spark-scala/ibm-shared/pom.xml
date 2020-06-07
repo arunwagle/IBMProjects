@@ -76,7 +76,7 @@
             <!-- Hibernate Validator -->
             <org.hibernate.validator.version>4.2.0.Final</org.hibernate.validator.version>
 
-            <scala.version>2.11.8</scala.version>
+            <scala.version>2.11.12</scala.version>
 
             <mapr.drill.version>1.3.0</mapr.drill.version>
 
