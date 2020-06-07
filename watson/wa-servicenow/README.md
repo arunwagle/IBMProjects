@@ -1,4 +1,4 @@
-# Covid-19-Finance-Virtual-Assistant
+# Watson Assistant Integration With ServiceNow
 
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Slack](https://img.shields.io/badge/Join-Slack-blue)](https://callforcode.org/slack) [![Website](https://img.shields.io/badge/View-Website-blue)](https://code-and-response.github.io/Project-Sample/)
 
@@ -134,14 +134,9 @@ These instructions will help you deploy the virtual assistant on your IBM Cloud 
 1. Create a free IBM Cloud Account
 2. Setup IBM Services
    1. Watson Assistant 
-   2. Watson Discovery
-   3. Speech to Text
-   4. Text to Speech
-   5. Voice Agent with Watson
-3. Deploy Web Application
-4. Deploy Voice + SMS Virtual Assistant
-5. Deploy SMS Virtual Assistant
-6. Deploy Slack Virtual Assistant
+   2. Watson Discovery  
+3. Setup Service Now
+
 
 #### [SETUP INSTRUCTIONS](setup/instructions.md)
 
