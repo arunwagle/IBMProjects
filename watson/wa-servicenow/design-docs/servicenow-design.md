@@ -1,9 +1,8 @@
 # ServiceNow Design
 
 1. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
-2. [Intents Design](#intents-design)
-3. [Entities Design](#entities-design)
-4. [Assistant Screenshot](#assistant-screenshot)
+2. [Node Design](#intents-design)
+3. [Runtime Screenshot](#assistant-screenshot)
 
 
 ## Virtual Agent Designer Flow Design
@@ -12,7 +11,9 @@
 
 <img src="wa-service-now-flow.png"/>
 
+## Node Design
 
+## Runtime Screenshot
 
 
 
