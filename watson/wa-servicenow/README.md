@@ -110,7 +110,7 @@ With this platform, financial institutions can provide easy access to informatio
 
 ### [Watson Discovery Design](/design-docs/wds-design.md)
 
-### [ServiceNow Design](/design-docs/servicenow-design.md)
+### [ServiceNow Design](design-docs/servicenow-design.md)
 
 ### [Detailed PDF](/design-docs/IBM-Watson-for-Banking-CallCenters-COVID-19-Final-Handout.pdf)
 
