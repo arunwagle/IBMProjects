@@ -516,9 +516,3 @@ Action Expression
 2. Preview lets you test the flow. Refer to the demo-scripts folder to run all the test scripts 
 3. Publish - Deploy an inactive topic to make it available to users on Virtual Agent clients.
 ````
-
-
-## Runtime Screenshot
-
-
-
