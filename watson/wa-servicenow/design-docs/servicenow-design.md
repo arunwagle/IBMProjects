@@ -2,7 +2,7 @@
 
 ## High Level Steps
 
-1. [Create a ServiceNow developer account](#servicenow-developer-account)
+1. [ServiceNow developer account](#servicenow-developer-account)
 2. [Configure the IBM Watson Assistant Chat integration](#configure-the-ibm-watson-assistant-chat-integration)
 3. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
    1. Create Topic(#create-topic)
@@ -12,8 +12,13 @@
    5. Publish(#publish)
 
 
-## Create a ServiceNow developer account
-**Watson Assistant version2 is currenlty supported in _Orlando workspace_.**
+## ServiceNow developer account
+
+### Watson Assistant version2 is currenlty supported in _Orlando workspace_
+````
+1. Go to https://developer.servicenow.com/dev.do to create a developer account.
+2. Make sure you select Orlando to create the instance as Watson Assitance version 2 is supported in that region currenlty.
+````
 
 ## Configure the IBM Watson Assistant Chat integration
 Refer to https://docs.servicenow.com/bundle/orlando-performance-analytics-and-reporting/page/administer/virtual-agent/task/configure-watson-assistant-topic.html
