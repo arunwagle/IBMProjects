@@ -14,7 +14,7 @@
 
 ## ServiceNow developer account
 
-### Watson Assistant version2 is currenlty supported in _Orlando workspace_
+### Note: Watson Assistant version2 is currenlty supported in _Orlando workspace_
 ````
 1. Go to https://developer.servicenow.com/dev.do to create a developer account.
 2. Make sure you select Orlando to create the instance as Watson Assitance version 2 is supported in that region currenlty.
