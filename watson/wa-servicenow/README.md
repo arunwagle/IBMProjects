@@ -92,7 +92,7 @@ With this platform, financial institutions can provide easy access to informatio
 
 ## The architecture
 
-![Concecptual Architecture](/design-docs/images/conceptual-arc.png)
+![Concecptual Architecture](design-docs/conceptual-arc.png)
 
 1. The user can interact with the virtual assistant using 
    1. Web
