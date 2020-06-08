@@ -19,8 +19,23 @@
 ### Configure the IBM Watson Assistant Chat integration
 Refer to https://docs.servicenow.com/bundle/orlando-performance-analytics-and-reporting/page/administer/virtual-agent/task/configure-watson-assistant-topic.html
 
+Step 1
+````
+In your ServiceNow instance, update the watson_assistant.workspaceID system property.
+In the Navigation filter, enter sys_properties.list
+In the System Properties [sys_properties] table, edit
+a. watson_assistant.v2.assistantID - Replace the existing Value with the assistant ID for your skill, and click Update.
+b. watson_assistant.v2.service_endpoint, edit value to gateway.watsonplatform.net
 ````
 
+Step 2
+````
+Navigate to System Web Services > Outbound > REST Message.
+Select the IBM Watson Assistant record to open the REST Message IBM Watson Assistance form.
+Confirm that the Endpoint field and the Endpoint column displayed in the Authentication tab have the correct endpoint URL for your IBM Watson account.
+Endpoint: gateway.watsonplatform.net
+Authentication type: Basic
+Basic auth profile: IBM Watson Assistant Profile (Click on info icon and edit the apikey and password) 
 ````
 
 ### Design Flow
