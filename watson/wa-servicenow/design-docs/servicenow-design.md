@@ -13,7 +13,7 @@
 
 ## Node Design
 
-### Node - Initialize Assistant
+### Node - Initialize Assistant (Type: Script Action Basic Info)
 Action Expression
 ````
 (function execute() {
@@ -23,7 +23,7 @@ Action Expression
 })()
 ```` 
 
-### Node - Send Message to Watson
+### Node - Send Message to Watson (Type: Script Action Basic Info)
 Action Expression
 ````
 (function execute() {
@@ -39,7 +39,7 @@ Condition (Script)
 })()
 ```` 
 
-### Node - Load Conversations
+### Node - Load Conversations (Type: Script Action Basic Info)
 Action Expression
 ````
 (function execute() {
@@ -135,6 +135,88 @@ Condition (Script)
             vaVars.connectToAgentInputResponse === true) ? true : false;      
 })()
 
+```` 
+
+### Node - Initialize Multi Flow Index (Type: Script Action Basic Info)
+Action Expression
+````
+(function execute() {
+    vaVars.currentIndex = 0;     
+})()
+
+````
+### Node - Step Multi Flow Response (Type: Script Action Basic Info)
+Action Expression
+````
+(function execute() {
+    var i = vaVars.currentIndex; 
+    gs.info("START :: Step Multi Flow Response: response ::currentIndex ::" + i ); 
+    var multiFlowResponseArr = JSON.parse(vaVars.multiFlowResponseJSON); 
+    var multiFlowResponseObj = multiFlowResponseArr[i];
+      
+    if (multiFlowResponseObj.response_type === 'text'){
+        vaVars.multiFlowTextResponse = true;        
+    } 
+    else if (multiFlowResponseObj.response_type === 'image'){
+        vaVars.multiFlowImageResponse = true;            
+    }    
+           
+    vaVars.currentMultiFlowResponseJSON = JSON.stringify(multiFlowResponseObj);
+    gs.info("END :: Step  Multi Flow Response:: currentMultiFlowResponseJSON::" +  vaVars.currentMultiFlowResponseJSON);
+})()
+
+```` 
+Condition (Script)
+````
+(function execute() {
+    var multiFlowResponse = JSON.parse(vaVars.multiFlowResponseJSON);     
+    var runMultiFlow = multiFlowResponse.length > 0 ? true : false;
+    gs.info("CONDITION::Step Multi Flow Response:: runMultiFlow:: " + runMultiFlow);
+    return runMultiFlow;
+})()
+
+```` 
+### Node - Render Text (Type: Text Output Basic Info)
+Action Expression
+````
+(function execute() {
+   var currentMultiFlowResponse = JSON.parse(vaVars.currentMultiFlowResponseJSON)
+   vaVars.multiFlowTextResponse = false;      
+   return currentMultiFlowResponse.text;  
+    
+})()
+
+
+```` 
+Condition (Script)
+````
+(function execute() {
+
+    var isMultiFlowTextResponse = vaVars.multiFlowTextResponse == true ? true : false;
+    gs.info("CONDITION::Render Text:: isMultiFlowTextResponse:: " + isMultiFlowTextResponse);
+    return isMultiFlowTextResponse;
+})()
+```` 
+
+### Node - Render Image (Type: Image Basic Info)
+Action Expression
+````
+(function execute() {
+   var currentMultiFlowResponse = JSON.parse(vaVars.currentMultiFlowResponseJSON)
+   gs.info("Render Image ::currentMultiFlowResponse:: " + currentMultiFlowResponse ); 
+   vaVars.multiFlowImageResponse = false;    
+   return currentMultiFlowResponse.source;  
+    
+})()
+
+```` 
+Condition (Script)
+````
+(function execute() { 
+    var isMultiFlowImageResponse = vaVars.multiFlowImageResponse == true ? true : false;
+    gs.info("CONDITION:: Render Image :: isMultiFlowImageResponse:: " + isMultiFlowImageResponse);
+    return isMultiFlowImageResponse;
+})()
 ```` 
 
 ## Runtime Screenshot
