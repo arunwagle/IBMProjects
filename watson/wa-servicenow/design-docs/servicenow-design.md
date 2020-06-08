@@ -1,25 +1,26 @@
 # ServiceNow & Watson Assistant Integration
 
-1. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
-2. [Node Design](#node-design)
-3. [Runtime Screenshot](#runtime-screenshot)
+## High Level Steps
 
+1. [Configure the IBM Watson Assistant Chat integration](#configure-the-ibm-watson-assistant-chat-integration)
+2. Create Topic
+3. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
+   [Node Source](#node-design)
+4. Save the flow
+5. Preview 
+6. Publish
 
-## Virtual Agent Designer Flow Design
-
-### High Level Steps
-
-1. Configure the IBM Watson Assistant Chat integration
-1. Create Topic
-1. Design Flow
-1. Save the flow
-1. Preview 
-1. Publish
-
-### Configure the IBM Watson Assistant Chat integration
+## Configure the IBM Watson Assistant Chat integration
 Refer to https://docs.servicenow.com/bundle/orlando-performance-analytics-and-reporting/page/administer/virtual-agent/task/configure-watson-assistant-topic.html
 
 Step 1
+````
+In your ServiceNow instance, activate these plugins: Search Plugins in the filter search box
+Glide Virtual Agent (com.glide.cs.chatbot), if not already activated (requires a subscription)
+IBM Watson Assistant Integration V2 plugin (com.glide.cs.ibm.watson.assistant.topicV2)
+
+````
+Step 2
 ````
 In your ServiceNow instance, update the watson_assistant.workspaceID system property.
 In the Navigation filter, enter sys_properties.list
@@ -28,7 +29,7 @@ a. watson_assistant.v2.assistantID - Replace the existing Value with the assista
 b. watson_assistant.v2.service_endpoint, edit value to gateway.watsonplatform.net
 ````
 
-Step 2
+Step 3
 ````
 Navigate to System Web Services > Outbound > REST Message.
 Select the IBM Watson Assistant record to open the REST Message IBM Watson Assistance form.
@@ -38,9 +39,7 @@ Authentication type: Basic
 Basic auth profile: IBM Watson Assistant Profile (Click on info icon and edit the apikey and password) 
 ````
 
-### Design Flow
-
-### Design Flow
+## Virtual Agent Designer Flow Design
 
 <img src="wa-service-now-flow.png"/>
 
