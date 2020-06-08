@@ -119,6 +119,23 @@ Action Expression
 
 ```` 
 
+### Node Edge - Continue Flow
+Condition (Script)
+````
+(function execute() {
+    return vaVars.connectToAgentInputResponse === true ? false : true;      
+})()
+
+```` 
+### Node Edge - End Flow
+Condition (Script)
+````
+(function execute() {
+    return (vaVars.endFlow === true || 
+            vaVars.connectToAgentInputResponse === true) ? true : false;      
+})()
+
+```` 
 
 ## Runtime Screenshot
 
