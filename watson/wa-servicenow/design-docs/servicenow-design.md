@@ -2,13 +2,18 @@
 
 ## High Level Steps
 
-1. [Configure the IBM Watson Assistant Chat integration](#configure-the-ibm-watson-assistant-chat-integration)
-2. Create Topic
+1. [Create a ServiceNow developer account](#servicenow-developer-account)
+2. [Configure the IBM Watson Assistant Chat integration](#configure-the-ibm-watson-assistant-chat-integration)
 3. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
-   1. [Node Source](#node-design)
-4. Save the flow
-5. Preview 
-6. Publish
+   1. Create Topic(#create-topic)
+   2. [Node Source](#node-design)
+   3. Save the flow(#save-the-flow)
+   4. Preview(#preview)
+   5. Publish(#publish)
+
+
+## Create a ServiceNow developer account
+**Watson Assistant version2 is currenlty supported in _Orlando workspace_ **
 
 ## Configure the IBM Watson Assistant Chat integration
 Refer to https://docs.servicenow.com/bundle/orlando-performance-analytics-and-reporting/page/administer/virtual-agent/task/configure-watson-assistant-topic.html
@@ -40,8 +45,14 @@ c. Confirm that the Endpoint field and the Endpoint column displayed in the Auth
 ````
 
 ## Virtual Agent Designer Flow Design
-
 <img src="wa-service-now-flow.png"/>
+
+## Create Topic
+````
+1. Select Virtual Agent > Designer from the Filter Navigation menu
+2. Click on "Add a Topic" or select an existing topic "IBM Watson Assistant V2" and duplicate it.
+3. Now you can design the flows by selecting the topic and clicking on the "Edit Topic Flow"
+````
 
 ## Node Design
 
@@ -490,6 +501,17 @@ Action Expression
 })()
 
 ```` 
+
+## Save the flow
+## Preview
+## Publish
+
+````
+1. Make sure you save the flow by clicking on save button
+2. Preview lets you test the flow. Refer to the demo-scripts folder to run all the test scripts 
+3. Publish - Deploy an inactive topic to make it available to users on Virtual Agent clients.
+````
+
 
 ## Runtime Screenshot
 
