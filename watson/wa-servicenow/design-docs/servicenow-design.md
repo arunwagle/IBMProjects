@@ -13,7 +13,7 @@
 
 
 ## Create a ServiceNow developer account
-**Watson Assistant version2 is currenlty supported in _Orlando workspace_ **
+**Watson Assistant version2 is currenlty supported in _Orlando workspace_.**
 
 ## Configure the IBM Watson Assistant Chat integration
 Refer to https://docs.servicenow.com/bundle/orlando-performance-analytics-and-reporting/page/administer/virtual-agent/task/configure-watson-assistant-topic.html
