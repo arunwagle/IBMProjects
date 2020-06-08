@@ -219,6 +219,240 @@ Condition (Script)
 })()
 ```` 
 
+### Node - Increment current index (Type: Script Action Basic Info)
+Action Expression
+````
+(function execute() {
+    gs.info("START:: Increment current index ");
+    vaVars.currentIndex++;  
+})()
+
+```` 
+Condition (Script)
+````
+(function execute() {
+    var multiFlowResponse = JSON.parse(vaVars.multiFlowResponseJSON);     
+    incrementCurrentIndex = multiFlowResponse.length > 0 ? true : false;
+    gs.info("CONDITION:: Increment current index:: incrementCurrentIndex :: " + incrementCurrentIndex);
+    return incrementCurrentIndex;
+})()
+
+```` 
+
+### Node Edge - Iterate
+Condition (Script)
+````
+(function execute() {
+    var multiFlowResponse = JSON.parse(vaVars.multiFlowResponseJSON); 
+    var currentIndex = vaVars.currentIndex;    
+    isIterate = currentIndex <= multiFlowResponse.length - 1 ? true : false;
+    gs.info("CONDITION:: iterate:: isIterate:: " + isIterate);
+
+    return isIterate;
+})()
+
+```` 
+
+### Node Edge - Run Next Step
+Condition (Script)
+````
+(function execute() {
+    var multiFlowResponse = JSON.parse(vaVars.multiFlowResponseJSON); 
+    var currentIndex = vaVars.currentIndex;    
+    runNextStep = (currentIndex == multiFlowResponse.length) ? true : false;
+    
+    gs.info("CONDITION:: Run Next Step:: runNextStep :: " + runNextStep);
+    return runNextStep;
+})()
+
+```` 
+
+### Node Edge - Render Search Response
+Condition (Script)
+````
+(function execute() {
+    gs.info("START:: Render Search Response ");     
+    var searchResponse = JSON.parse(vaVars.searchFlowResponseJSON);       
+    var renderSearchResponse = searchResponse != null ? true: false;
+    gs.info("END:: Render Search Response:: renderSearchResponse:: " + renderSearchResponse);
+    return renderSearchResponse;   
+})()
+
+```` 
+
+### Node Edge - Render Choice And Prompt Decision
+Condition (Script)
+````
+(function execute() {
+    gs.info("START:: Render Choice And Prompt Decision ");     
+    var choiceResponse = JSON.parse(vaVars.choiceUserInputResponse);   
+
+    var searchResponse = JSON.parse(vaVars.searchFlowResponseJSON);       
+    var renderSearchResponse = searchResponse != null ? true: false;
+
+    var renderChoiceResponse = (choiceResponse != null && renderSearchResponse == false) 
+                                ? true: false;
+
+    gs.info("END:: Render Choice And Prompt Decision:: renderChoiceResponse:: " + renderChoiceResponse);
+    return renderChoiceResponse;   
+})()
+
+```` 
+
+### Node Edge - Render Text And Prompt Decision
+Condition (Script)
+````
+(function execute() {
+    gs.info("START:: Render Text And Prompt Decision ");     
+    var textResponse = JSON.parse(vaVars.textUserInputResponse); 
+    var searchResponse = JSON.parse(vaVars.searchFlowResponseJSON);       
+    var renderSearchResponse = searchResponse != null ? true: false;
+
+    var renderTextResponse = (textResponse != null && renderSearchResponse == false) 
+                                ? true: false;          
+    
+    gs.info("END:: Render Text And Prompt Decision:: renderTextResponse:: " + renderTextResponse);
+    return renderTextResponse;   
+})()
+
+
+```` 
+
+### Node - Render Html (Type: Script Basic Info, Script Output Type- Multipart)
+Script Response Message
+````
+(function execute() {
+      /*************************************************************** 
+       YOU CAN OUTPUT A SinglePartOutMsg (see full API for sn_cs.SinglePartOutMsg), 
+       LIKE THIS:
+       
+       var singleOutMsg = new sn_cs.SinglePartOutMsg();
+       singleOutMsg.setTextPart('text part');
+       return singleOutMsg;
+      ****************************************************************/ 
+          
+      /*************************************************************** 
+       OR YOU CAN OUTPUT A MultiPartOutMsg (see full API for sn_cs.MultiPartOutMsg),
+       LIKE THIS:
+       
+       var multiOutMsg = new sn_cs.MultiPartOutMsg();
+       multiOutMsg.setNavigationLabel('Click for More');
+       multiOutMsg.addPlainTextPart('text part 1');
+       multiOutMsg.addPlainTextPart('text part 2');
+       return multiOutMsg;
+      ****************************************************************/
+      
+      /***************************************************************
+       * NOTE: You can include conditional logic when building the 
+       * output content. For example, if constructing a sn_cs.MultiPartOutMsg 
+       * then you might want to add 3 parts under condition (A) but 7 parts 
+       * under condition (B).
+       *
+       * HOWEVER, do NOT include conditional logic that varies the output TYPE.
+       * That is, do NOT include a condition that might return either a
+       * sn_cs.SinglePartOutMsg under condition (A) but returns a 
+       * sn_cs.MultiPartOutMsg under condition (B).
+       ****************************************************************/
+
+      gs.info("START::Render HTML:: ");  
+      var searchResponseText = JSON.parse(vaVars.searchFlowResponseJSON).text;
+      var searchResponse = JSON.parse(searchResponseText);
+      gs.info("Render HTML:: searchResponse:: " + searchResponse);        
+      var header = "I searched my knowledge base and found this information which might be useful";    
+      var htmlString = '<h2 style="color: #4485b8;">' + header + '</h2>';
+      title = searchResponse.title;
+      gs.info("Render HTML:: title:: " + title);
+      answer = searchResponse.text;                    
+      htmlString += '<h3>' + title + '</h3>';
+      htmlString += '<p>' + answer + '</p>';   
+    
+      var multiOutMsg = new sn_cs.MultiPartOutMsg();  
+      multiOutMsg.addHtmlPart(htmlString);
+      // var singlePartOutMsg = new sn_cs.SinglePartOutMsg();   
+      // singlePartOutMsg.addHtmlPart(htmlString);
+      gs.info("END::Render HTML:: htmlString:: " + htmlString);
+            
+      return multiOutMsg;
+})()
+
+```` 
+### Node - Render Choice and Prompt (Type: Reference Choice List Basic Info)
+Prompt
+````
+(function execute() {
+   responseObj = JSON.parse(vaVars.choiceUserInputResponse);
+   var message = responseObj.title 
+   return message;
+})()
+
+```` 
+Reference Type (Script) , Choice Value Expression
+````
+(function execute() {
+    var options = [];
+    responseObj = JSON.parse(vaVars.choiceUserInputResponse);
+    var suggestions = responseObj.options;
+    suggestions.forEach(function(option){
+        options.push({'value': option.value.input.text,
+                      'label':option.label})
+    })  
+    gs.info("suggestion:: Options ::" + options);        
+    return options;    
+})()
+
+```` 
+### Node - Render and Prompt User Text (Type: String Basic Info)
+Prompt
+````
+(function execute() {
+   responseObj = JSON.parse(vaVars.textUserInputResponse);
+   var message = responseObj.text 
+   return message;
+})()
+
+````
+
+### Node - Set End Flow Flag (Type: Script Action Basic Info)
+Action Expression
+````
+(function execute() {
+    
+    gs.info("START::Set End Flow Flag");
+    //  clear search field
+    vaVars.searchFlowResponseJSON = null;
+
+    var textResponse = JSON.parse(vaVars.textUserInputResponse); 
+    if (textResponse != null) {
+        vaVars.endFlow = false;
+    }
+    else{
+        vaVars.endFlow = true;
+    }
+    
+})()
+
+```` 
+
+### Node - Copy Choice Input (Type: Script Action Basic Info)
+Action Expression
+````
+(function execute() { 
+    gs.info("START::Copy Choice Input" );         
+    vaVars.user_response = vaInputs.render_choice_and_prompt.getValue();       
+})()
+
+```` 
+
+### Node - Copy Text Input (Type: Script Action Basic Info)
+Action Expression
+````
+(function execute() { 
+    gs.info("START::Copy Text Input" );         
+    vaVars.user_response = vaInputs.render_and_prompt_user_text.getValue();        
+})()
+
+```` 
+
 ## Runtime Screenshot
 
 
