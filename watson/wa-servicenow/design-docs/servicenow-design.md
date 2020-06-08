@@ -96,9 +96,14 @@ Action Expression
                    }   
                }
            }
+        //    currently image handling is done only for multiflow response
+           else if (response_type === 'image'){
+               multiFlowResponse.push(watsonResponseObj.output.generic[i]);
+           }
            else if (recordCount == 1 && response_type === 'connect_to_agent'){               
               connectToAgentInputResponse = true;
-           }        
+           }
+                  
         }
         
         vaVars.multiFlowResponseJSON = JSON.stringify(multiFlowResponse); 
@@ -116,6 +121,7 @@ Action Expression
     }
     return false;
 })()
+
 
 ```` 
 
