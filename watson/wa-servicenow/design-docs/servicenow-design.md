@@ -5,11 +5,11 @@
 1. [ServiceNow developer account](#servicenow-developer-account)
 2. [Configure the IBM Watson Assistant Chat integration](#configure-the-ibm-watson-assistant-chat-integration)
 3. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
-   1. Create Topic(#create-topic)
+   1. [Create Topic](#create-topic)
    2. [Node Source](#node-design)
-   3. Save the flow(#save-the-flow)
-   4. Preview(#preview)
-   5. Publish(#publish)
+   3. [Save the flow](#save-the-flow)
+   4. [Preview](#preview)
+   5. [Publish](#publish)
 
 
 ## ServiceNow developer account
