@@ -5,7 +5,7 @@
 1. [Configure the IBM Watson Assistant Chat integration](#configure-the-ibm-watson-assistant-chat-integration)
 2. Create Topic
 3. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
-   [Node Source](#node-design)
+   1. [Node Source](#node-design)
 4. Save the flow
 5. Preview 
 6. Publish
