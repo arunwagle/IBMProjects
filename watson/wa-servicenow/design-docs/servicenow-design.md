@@ -15,28 +15,28 @@ Refer to https://docs.servicenow.com/bundle/orlando-performance-analytics-and-re
 
 Step 1
 ````
-In your ServiceNow instance, activate these plugins: Search Plugins in the filter search box
-Glide Virtual Agent (com.glide.cs.chatbot), if not already activated (requires a subscription)
-IBM Watson Assistant Integration V2 plugin (com.glide.cs.ibm.watson.assistant.topicV2)
+In your ServiceNow instance, activate these plugins: 
+a. Search Plugins in the filter search box
+b. Activate Glide Virtual Agent (com.glide.cs.chatbot), if not already activated (requires a subscription)
+c. Activate IBM Watson Assistant Integration V2 plugin (com.glide.cs.ibm.watson.assistant.topicV2)
 
 ````
 Step 2
 ````
 In your ServiceNow instance, update the watson_assistant.workspaceID system property.
-In the Navigation filter, enter sys_properties.list
-In the System Properties [sys_properties] table, edit
-a. watson_assistant.v2.assistantID - Replace the existing Value with the assistant ID for your skill, and click Update.
-b. watson_assistant.v2.service_endpoint, edit value to gateway.watsonplatform.net
+a. In the Navigation filter, enter sys_properties.list
+b. In the System Properties [sys_properties] table, edit
+   - watson_assistant.v2.assistantID - Replace the existing Value with the assistant ID for your skill, and click Update.
+   - watson_assistant.v2.service_endpoint, edit value to gateway.watsonplatform.net
 ````
 
 Step 3
 ````
-Navigate to System Web Services > Outbound > REST Message.
-Select the IBM Watson Assistant record to open the REST Message IBM Watson Assistance form.
-Confirm that the Endpoint field and the Endpoint column displayed in the Authentication tab have the correct endpoint URL for your IBM Watson account.
-Endpoint: gateway.watsonplatform.net
-Authentication type: Basic
-Basic auth profile: IBM Watson Assistant Profile (Click on info icon and edit the apikey and password) 
+a. Navigate to System Web Services > Outbound > REST Message.
+b. Select the IBM Watson Assistant record to open the REST Message IBM Watson Assistance form.
+c. Confirm that the Endpoint field and the Endpoint column displayed in the Authentication tab have the correct endpoint URL for your IBM Watson account. (Endpoint: gateway.watsonplatform.net)
+4. Set Authentication type: Basic
+5. Edit Basic auth profile: IBM Watson Assistant Profile (Click on info icon and edit the apikey and password) 
 ````
 
 ## Virtual Agent Designer Flow Design
