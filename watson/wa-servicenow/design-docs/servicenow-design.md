@@ -1,4 +1,4 @@
-# ServiceNow Design
+# ServiceNow & Watson Assistant Integration
 
 1. [Virtual Agent Designer Flow Design](#virtual-agent-designer-flow-design)
 2. [Node Design](#node-design)
@@ -7,7 +7,25 @@
 
 ## Virtual Agent Designer Flow Design
 
-### Overall Dialog Flow
+### High Level Steps
+
+1. Configure the IBM Watson Assistant Chat integration
+1. Create Topic
+1. Design Flow
+1. Save the flow
+1. Preview 
+1. Publish
+
+### Configure the IBM Watson Assistant Chat integration
+Refer to https://docs.servicenow.com/bundle/orlando-performance-analytics-and-reporting/page/administer/virtual-agent/task/configure-watson-assistant-topic.html
+
+````
+
+````
+
+### Design Flow
+
+### Design Flow
 
 <img src="wa-service-now-flow.png"/>
 
