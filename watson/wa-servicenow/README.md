@@ -49,7 +49,9 @@ Use Cases handled as a part of this asset. This can be extended to any use case 
 
 ![High Level Architecture](design-docs/high-level-arc.png)
 
-### [Watson Platform](design-docs/watson-platform.png)
+### [Watson Platform]
+
+![Watson Platform](design-docs/watson-platform.png)
 
 ### [Watson Assistant Design](/design-docs/wa-design.md)
 
