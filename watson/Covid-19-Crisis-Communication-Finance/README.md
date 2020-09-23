@@ -212,7 +212,6 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Arun Wagle** - *Project Lead* - (https://w3.ibm.com/bluepages/profile.html?uid=1J2509897)
 * **Anjali Shah** - *Role: Technical SME* - (https://w3.ibm.com/bluepages/profile.html?uid=1J2706897)
 * **Mark Romagna** - *Role: Business* - (https://w3.ibm.com/bluepages/profile.html?uid=0G1028897)
-* **Mark Romagna** - *Role: Business* - (https://w3.ibm.com/bluepages/profile.html?uid=9D0586897)
 
 
 ## License
