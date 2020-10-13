@@ -34,7 +34,7 @@
             <version.plugin.failsafe>2.6</version.plugin.failsafe>
 
             <!-- JUnit Version -->
-            <version.junit>4.11</version.junit>
+            <version.junit>4.13.1</version.junit>
             <!-- Mockito Version -->
             <version.mockito>1.10.19</version.mockito>
 
